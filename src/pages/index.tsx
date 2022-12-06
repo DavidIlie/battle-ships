@@ -10,11 +10,11 @@ const Game: NextPage = () => {
       useState<BattleShipId | null>(null);
 
    return (
-      <div className="container max-w-4xl min-h-screen py-12 mx-auto">
-         <h1 className="text-2xl font-medium text-center">Battle Ships Game</h1>
+      <div className="container max-w-4xl h-[90vh] py-12 mx-auto">
+         <h1 className="text-3xl font-medium text-center">Battle Ships Game</h1>
          <div className="flex items-center justify-center gap-8 py-12">
-            <div className="w-full text-xl font-medium">
-               <h1>Your Ships</h1>
+            <div className="w-full text-2xl font-medium">
+               <h1 className="pb-1 mb-2 border-b-2">Your Ships</h1>
                {pickableCarriers.map((carrier, index) => (
                   <BattleShip
                      id={carrier.id}
@@ -44,13 +44,13 @@ const BattleShip: FC<{
             state === "available"
                ? "bg-blue-500"
                : state === "pending" && "bg-gray-400",
-            "py-1 px-1 flex justify-between text-white my-1 w-[20%] rounded hover:bg-gray-400 duration-150 cursor-pointer"
+            "py-1 px-2 flex justify-between text-white my-1 w-[20%] rounded hover:bg-gray-400 duration-150 cursor-pointer"
          )}
          onClick={() =>
             state === "available" ? changeState(id) : changeState(null)
          }
       >
-         {carrier.name}
+         <p className="text-xl">{carrier.name}</p>
          <div className="flex items-center justify-center gap-1">
             {Array.from(Array(carrier.dots)).map((_n, index) => (
                <p
