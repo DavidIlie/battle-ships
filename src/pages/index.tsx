@@ -12,13 +12,15 @@ const Game: NextPage = () => {
 
    return (
       <Slide direction="down" duration={400}>
-         <div className="container max-w-4xl h-[90vh] py-12 mx-auto">
+         <div className="container max-w-7xl h-[90vh] py-12 mx-auto">
             <h1 className="text-3xl font-medium text-center">
                Battle Ships Game
             </h1>
-            <div className="flex items-center justify-center gap-8 py-6">
-               <div className="w-full text-2xl font-medium">
-                  <h1 className="pb-1 mb-2 border-b-2">Your Ships</h1>
+            <div className="flex justify-center gap-8 py-6">
+               <div className="w-1/3">
+                  <h1 className="pb-1 mb-2 text-2xl font-medium border-b-2">
+                     Your Ships
+                  </h1>
                   {pickableCarriers.map((carrier, index) => (
                      <BattleShip
                         id={carrier.id}
@@ -27,6 +29,16 @@ const Game: NextPage = () => {
                         key={index}
                      />
                   ))}
+               </div>
+               <div className="w-1/3">
+                  <h1 className="pb-1 mb-2 text-2xl font-medium border-b-2">
+                     You
+                  </h1>
+               </div>
+               <div className="w-1/3">
+                  <h1 className="pb-1 mb-2 text-2xl font-medium border-b-2">
+                     Computer
+                  </h1>
                </div>
             </div>
          </div>
@@ -44,7 +56,7 @@ const BattleShip: FC<{
       <div
          className={classNames(
             selected ? "bg-blue-400" : "bg-blue-500",
-            "py-1 px-2 flex justify-between text-white my-1 w-[20%] rounded hover:bg-gray-400 duration-150 cursor-pointer"
+            "py-1 px-2 flex justify-between text-white my-1 w-2/3 rounded hover:bg-gray-400 duration-150 cursor-pointer"
          )}
          onClick={() => (selected ? changeState(null) : changeState(id))}
       >
