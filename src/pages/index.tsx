@@ -56,7 +56,7 @@ const BattleShip: FC<{
       <div
          className={classNames(
             selected ? "bg-blue-400" : "bg-blue-500",
-            "py-1 px-2 flex justify-between text-white my-1 w-2/3 rounded hover:bg-gray-400 duration-150 cursor-pointer"
+            "py-2 px-2 flex justify-between text-white my-1 w-2/3 rounded hover:bg-gray-400 duration-150 cursor-pointer"
          )}
          onClick={() => (selected ? changeState(null) : changeState(id))}
       >
