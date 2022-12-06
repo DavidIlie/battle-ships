@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { FC, useState } from "react";
 import classNames from "classnames";
+import { Slide } from "react-awesome-reveal";
 
 import { BattleShipId, carriers } from "../data/carriers";
 
@@ -10,22 +11,26 @@ const Game: NextPage = () => {
       useState<BattleShipId | null>(null);
 
    return (
-      <div className="container max-w-4xl h-[90vh] py-12 mx-auto">
-         <h1 className="text-3xl font-medium text-center">Battle Ships Game</h1>
-         <div className="flex items-center justify-center gap-8 py-12">
-            <div className="w-full text-2xl font-medium">
-               <h1 className="pb-1 mb-2 border-b-2">Your Ships</h1>
-               {pickableCarriers.map((carrier, index) => (
-                  <BattleShip
-                     id={carrier.id}
-                     selected={selectedPlaceCarrier === carrier.id}
-                     changeState={setSelectedPlaceCarrier}
-                     key={index}
-                  />
-               ))}
+      <Slide direction="down" duration={400}>
+         <div className="container max-w-4xl h-[90vh] py-12 mx-auto">
+            <h1 className="text-3xl font-medium text-center">
+               Battle Ships Game
+            </h1>
+            <div className="flex items-center justify-center gap-8 py-6">
+               <div className="w-full text-2xl font-medium">
+                  <h1 className="pb-1 mb-2 border-b-2">Your Ships</h1>
+                  {pickableCarriers.map((carrier, index) => (
+                     <BattleShip
+                        id={carrier.id}
+                        selected={selectedPlaceCarrier === carrier.id}
+                        changeState={setSelectedPlaceCarrier}
+                        key={index}
+                     />
+                  ))}
+               </div>
             </div>
          </div>
-      </div>
+      </Slide>
    );
 };
 
