@@ -18,11 +18,7 @@ const Game: NextPage = () => {
                {pickableCarriers.map((carrier, index) => (
                   <BattleShip
                      id={carrier.id}
-                     state={
-                        selectedPlaceCarrier === carrier.id
-                           ? "pending"
-                           : "available"
-                     }
+                     selected={selectedPlaceCarrier === carrier.id}
                      changeState={setSelectedPlaceCarrier}
                      key={index}
                   />
@@ -35,21 +31,17 @@ const Game: NextPage = () => {
 
 const BattleShip: FC<{
    id: BattleShipId;
-   state: "available" | "pending";
+   selected: boolean;
    changeState: (id: BattleShipId | null) => void;
-}> = ({ id, state, changeState }) => {
+}> = ({ id, selected, changeState }) => {
    const carrier = carriers.filter((s) => s.id === (id as never as string))[0];
    return (
       <div
          className={classNames(
-            state === "available"
-               ? "bg-blue-500"
-               : state === "pending" && "bg-gray-400",
+            selected ? "bg-blue-400" : "bg-blue-500",
             "py-1 px-2 flex justify-between text-white my-1 w-[20%] rounded hover:bg-gray-400 duration-150 cursor-pointer"
          )}
-         onClick={() =>
-            state === "available" ? changeState(id) : changeState(null)
-         }
+         onClick={() => (selected ? changeState(null) : changeState(id))}
       >
          <p className="text-xl">{carrier.name}</p>
          <div className="flex items-center justify-center gap-1">
