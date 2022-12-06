@@ -2,37 +2,7 @@ import type { NextPage } from "next";
 import { FC, useState } from "react";
 import classNames from "classnames";
 
-type BattleShipId =
-   | "CARRIER"
-   | "BATTLESHIP"
-   | "CRUISER"
-   | "SUBMARINE"
-   | "DESTROYER"
-   | string;
-
-const carriers = [
-   {
-      id: "CARRIER",
-      name: "Carrier",
-      dots: 5,
-   },
-   {
-      id: "BATTLESHIP",
-      name: "Battleship",
-      dots: 4,
-   },
-   {
-      id: "CRUISER",
-      name: "Cruiser",
-      dots: 3,
-   },
-   {
-      id: "SUBMARINE",
-      name: "Submarine",
-      dots: 3,
-   },
-   { id: "DESTROYER", name: "Destroyer", dots: 2 },
-];
+import { BattleShipId, carriers } from "../data/carriers";
 
 const Game: NextPage = () => {
    const [pickableCarriers, setPickableCarriers] = useState(carriers);
