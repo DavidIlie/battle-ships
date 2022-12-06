@@ -4,11 +4,15 @@ import classNames from "classnames";
 import { Slide } from "react-awesome-reveal";
 
 import { BattleShipId, carriers } from "../data/carriers";
+import { createGrid } from "../lib/grid";
 
 const Game: NextPage = () => {
    const [pickableCarriers, setPickableCarriers] = useState(carriers);
    const [selectedPlaceCarrier, setSelectedPlaceCarrier] =
       useState<BattleShipId | null>(null);
+
+   const [playGrid, setPlayGrid] = useState(createGrid);
+   const [computerGrid, setComputerGrid] = useState(createGrid);
 
    return (
       <Slide direction="down" duration={400}>
