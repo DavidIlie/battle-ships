@@ -76,9 +76,9 @@ const BattleShip: FC<{
                : state === "pending" && "bg-gray-400",
             "py-1 px-1 flex justify-between text-white my-1 w-[20%] rounded hover:bg-gray-400 duration-150 cursor-pointer"
          )}
-         onClick={() => {
-            state === "available" ? changeState(id) : changeState(null);
-         }}
+         onClick={() =>
+            state === "available" ? changeState(id) : changeState(null)
+         }
       >
          {carrier.name}
          <div className="flex items-center justify-center gap-1">
