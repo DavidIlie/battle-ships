@@ -24,6 +24,7 @@ const Game: NextPage = () => {
                            : "available"
                      }
                      changeState={setSelectedPlaceCarrier}
+                     key={index}
                   />
                ))}
             </div>
