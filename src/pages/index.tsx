@@ -6,13 +6,16 @@ import { Slide } from "react-awesome-reveal";
 import GameGrid from "../components/GameGrid";
 
 import { BattleShipId, battleships } from "../data/ships";
-import { createGrid } from "../lib/grid";
+
+export const createGrid = Array.from({ length: 10 }, (_, i) =>
+   Array.from(Array(10).keys())
+);
 
 const Game: FC = () => {
    const [pickableShips, setPickableShips] = useState(battleships);
    const [selectedShip, setSelectedShip] = useState<BattleShipId | null>(null);
 
-   const [playGrid, setPlayGrid] = useState(createGrid);
+   const [playerGrid, setPlayerGrid] = useState(createGrid);
    const [computerGrid, setComputerGrid] = useState(createGrid);
 
    return (
@@ -32,7 +35,7 @@ const Game: FC = () => {
          </div>
          <div className="w-1/3">
             <h1 className="pb-1 mb-2 text-2xl font-medium border-b-2">You</h1>
-            <GameGrid grid={playGrid} />
+            <GameGrid grid={playerGrid} />
          </div>
          <div className="w-1/3">
             <h1 className="pb-1 mb-2 text-2xl font-medium border-b-2">
