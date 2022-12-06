@@ -38,6 +38,7 @@ const Game: FC = () => {
             <h1 className="pb-1 mb-2 text-2xl font-medium border-b-2">
                Computer
             </h1>
+            <GameGrid grid={computerGrid} />
          </div>
       </div>
    );
