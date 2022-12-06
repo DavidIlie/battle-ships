@@ -80,7 +80,6 @@ const BattleShip: FC<{
 
 const MainPage: NextPage = () => {
    const [startGame, setStartGame] = useState(false);
-
    return (
       <Slide direction="down" duration={400}>
          <div className="container h-[90vh] py-12 mx-auto">
