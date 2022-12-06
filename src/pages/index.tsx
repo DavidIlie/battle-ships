@@ -84,7 +84,6 @@ const MainPage: NextPage = () => {
             <h1 className="text-3xl font-medium text-center">
                Battle Ships Game
             </h1>
-
             {startGame ? (
                <Game />
             ) : (
