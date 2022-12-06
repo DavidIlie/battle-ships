@@ -6,7 +6,7 @@ export type BattleShipId =
    | "DESTROYER"
    | string;
 
-export const carriers = [
+export const battleships = [
    {
       id: "CARRIER",
       name: "Carrier",
