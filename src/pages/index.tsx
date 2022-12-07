@@ -35,13 +35,16 @@ const Game: FC = () => {
          </div>
          <div className="w-1/3">
             <h1 className="pb-1 mb-2 text-2xl font-medium border-b-2">You</h1>
-            <GameGrid grid={playerGrid} />
+            <GameGrid grid={playerGrid} selectable={true} />
          </div>
          <div className="w-1/3">
             <h1 className="pb-1 mb-2 text-2xl font-medium border-b-2">
                Computer
             </h1>
-            <GameGrid grid={computerGrid} />
+            <GameGrid
+               grid={computerGrid}
+               selectable={pickableShips.length === 0}
+            />
          </div>
       </div>
    );
