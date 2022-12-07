@@ -89,7 +89,7 @@ const MainPage: NextPage = () => {
             {startGame ? (
                <Game />
             ) : (
-               <div className="w-full py-4">
+               <div className="w-full py-2">
                   <p className="text-center">
                      Welcome to Battle Ships, press start to begin.
                   </p>
