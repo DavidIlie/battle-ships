@@ -51,7 +51,9 @@ const Game: FC = () => {
 };
 
 const MainPage: NextPage = () => {
-   const [startGame, setStartGame] = useState(false);
+   const [startGame, setStartGame] = useState(
+      process.env.NODE_ENV !== "production"
+   );
    return (
       <Slide direction="down" duration={400}>
          <div className="container h-[90vh] py-12 mx-auto">
