@@ -7,7 +7,7 @@ import GameGrid from "../components/GameGrid";
 
 import { BattleShipId, battleships } from "../data/ships";
 
-export const createGrid = Array.from({ length: 10 }, (_, i) => [
+const createGrid = Array.from({ length: 10 }, (_, i) => [
    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 ]);
 
